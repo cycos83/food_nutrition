@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Oct 07 21:39:20 KST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0166-4e8a-065c-00000ee74d48 
+on database directory /home/jinho/PycharmProjects/food_nutrition/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@4a1186d3 
+Loaded from file:/home/jinho/PycharmProjects/food_nutrition/venv/lib/python3.6/site-packages/pyspark/jars/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_181-8u181-b13-1-b13
+user.dir=/home/jinho/PycharmProjects/food_nutrition
+os.name=Linux
+os.arch=amd64
+os.version=4.18.0-8-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

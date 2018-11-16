@@ -1,0 +1,39 @@
+.main_page{
+    margin-top: 300px;
+    text-align: center;
+}
+
+.main_page > div{
+    margin-top: 20px;
+}
+
+#food_nut_logo{
+    color: #1D2475;
+    margin: 10px;
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 30px;
+    background-color: #8cc4ff;
+}
+
+footer div{
+    display: inline-block;
+}
+
+footer #etc_link p{
+    display: inline-block;
+    margin: 0 20px 0 0;
+    font-size: 20px;
+}
+
+footer #etc_link a{
+    color: black;
+}
+
+#univ_logo{
+    float: right;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ food_name }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/advanced_result.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+     <div class="row col-12">
+         <div class="col-2">
+             <div class="card text-white bg-primary mb-3" id="nutrition_grade">
+                 <div class="card-header">영양등급</div>
+                 <div class="card-body">
+                     <p class="card-text">B</p>
+                 </div>
+             </div>
+         </div>
+         <div class="col-10" id="nutrition_detail">
+             <div class="card bg-light mb-3">
+                <div class="card-header">영양성분 : {{ food_info['category'] }}</div>
+                 <div class="card-body">
+             <dl>
+                 <dt>총 제공량(g)</dt>
+                 <dd>{{ food_info['amount'] }}</dd>
+                 <dt>1회 제공량(g)</dt>
+                 <dd>{{ food_info['portion'] }}</dd>
+                 <dt>열량(Kcal)</dt>
+                 <dd>{{ food_info['calorie'] }}</dd>
+             </dl>
+             <dl>
+                 <dt>지방(g)</dt>
+                 <dd>{{ food_info['fat'] }}</dd>
+                 <dt class="detailed_nutrition">포화지방</dt>
+                 <dd class="detailed_nutrition">제공 예정</dd>
+                 <dt class="detailed_nutrition">다불포화지방</dt>
+                 <dd class="detailed_nutrition">제공 예정</dd>
+                 <dt class="detailed_nutrition">단일불포화지방</dt>
+                 <dd class="detailed_nutrition">제공 예정</dd>
+                 <dt>콜레스테롤</dt>
+                 <dd>제공 예정</dd>
+                 <dt>나트륨</dt>
+                 <dd>{{ food_info['natrium'] }}</dd>
+                 <dt>칼륨</dt>
+                 <dd>제공 예정</dd>
+                 <dt>탄수화물</dt>
+                 <dd>{{ food_info['carbohydrate'] }}</dd>
+                 <dt>단백질</dt>
+                 <dd>{{ food_info['protein'] }}</dd>
+             </dl>
+             <dl class="vitamin_list">
+                 <dt>비타민 A</dt>
+                 <dd>제공 예정</dd>
+                 <dt>칼슘</dt>
+                 <dd>제공 예정</dd>
+                 <dt>비타민 D</dt>
+                 <dd>제공 예정</dd>
+                 <dt>비타민 B12</dt>
+                 <dd>제공 예정</dd>
+                 <dt>비타민 C</dt>
+                 <dd>제공 예정</dd>
+                 <dt>철분</dt>
+                 <dd>제공 예정</dd>
+                 <dt>비타민 B6</dt>
+                 <dd>제공 예정</dd>
+                 <dt>마그네슘</dt>
+                 <dd>제공 예정</dd>
+             </dl>
+             <ul>
+                 <li>알러지 유발 식품
+                 <ul>
+                     <li>제공 예정</li>
+                 </ul>
+                 </li>
+                 <li>발암 물질
+                 <ul>
+                     <li>제공 예정</li>
+                 </ul>
+                 </li>
+                 <li>10대 주의성분
+                 <ul>
+                     <li>제공 예정</li>
+                 </ul>
+                 </li>
+             </ul>
+                 </div>
+             </div>
+         </div>
+     </div>
+</body>
+</html>

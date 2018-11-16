@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>전문가용 검색</title>
+    <!-- 아래는 디펜던시임 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dependency/bootstrap-4.1.3-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dependency/fontawesome-free-5.5.0-web/css/all.css') }}">
+    <script src="{{ url_for('static', filename='dependency/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dependency/bootstrap-4.1.3-dist/js/bootstrap.bundle.js') }}"></script>
+    <link rel="stylesheet" href="../static/css/result.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/advanced_result.css.css">
+</head>
+<body>
+    <header>
+        <a id="food_nut_logo" href="/"><h1>식품영양정보</h1></a>
+        <div id="univ_logo">
+            <img height="35px" src="{{ url_for('static', filename='img/univ_logo/erica.png') }}">
+            <img height="25px" src="{{ url_for('static', filename='img/univ_logo/unist.png') }}">
+            <img height="30px" src="{{ url_for('static', filename='img/univ_logo/gyeongbuk.png') }}">
+        </div>
+    </header>
+    <div id="subject" class="row p-0 m-0">
+        <div class="col-9">
+            <h2>전문가용 검색 : Hyperspectrum 그래프</h2>
+        </div>
+        <div class="search_change_button col-3">
+           <a href="{{ url_for('search', key_and=key_and, key_exactly=key_exactly, key_or=key_or, key_except=key_except, category=category) }}"><p>검색 화면</p></a>
+        </div>
+    </div>
+    <section class="row">
+        <div class="col-8 result_side">
+            {% if selected_name == None %}
+                <h1>상세 품목 선택 안 함</h1>
+            {% else %}
+                <h1>"{{ selected_name }}" 선택함</h1>
+            {% endif %}
+            {% if selected_food %}
+                {% if selected_food['calorie'] != None %}
+                <span class="food_badge">
+                        열량: {{ '{0:.1f}'.format(selected_food['calorie']) }} Kcal
+                </span>
+                {% endif %}
+                {% if selected_food['amount'] != None %}
+                <span class="food_badge">
+                        제공량: {{ '{0:.1f}'.format(selected_food['amount']) }} g
+                </span>
+                {% endif %}
+                {% if selected_food['carbohydrate'] != None %}
+                <span class="food_badge">
+                        탄수화물: {{ '{0:.1f}'.format(selected_food['carbohydrate']) }} g
+                </span>
+                {% endif %}
+                {% if selected_food['carbohydrate'] != None %}
+                <span class="food_badge">
+                        단백질: {{ '{0:.1f}'.format(selected_food['protein']) }} g
+                </span>
+                {% endif %}
+                {% if selected_food['fat'] != None %}
+                <span class="food_badge">
+                        지방: {{ '{0:.1f}'.format(selected_food['fat']) }} g
+                </span>
+                {% endif %}
+                {% if selected_food['natrium'] != None %}
+                <span class="food_badge">
+                        나트륨: {{ '{0:.1f}'.format(selected_food['natrium']) }} mg
+                </span>
+                {% endif %}
+            {% endif %}
+            <img src="{{ url_for('plot_png', key_and=key_and, key_exactly=key_exactly, key_or=key_or, key_except=key_except, category=category, selected_name=selected_name, range_max=range_max, range_min=range_min, value_max=value_max, value_min=value_min) }}">
+            <a download="ir_image.png" href="{{ url_for('plot_png', key_and=key_and, key_exactly=key_exactly, key_or=key_or, key_except=key_except, category=category, selected_name=selected_name, range_max=range_max, range_min=range_min, value_max=value_max, value_min=value_min) }}">
+                <button class="btn btn-primary">이미지 내려받기</button>
+            </a>
+            <form action="{{ url_for('ir_search') }}" method="get">
+                <div class="form-group">
+                    <p>범위</p>
+                    <label for="range_max">최고값</label>
+                    <input type="number" class="form-control" min="0" max="255" name="range_max" id="range_max" value={{ range_max }}>
+                    <label for="range_min">최저값</label>
+                    <input type="number" class="form-control" min="0" max="255" name="range_min" id="range_min" value={{ range_min }}>
+                    <p>수치</p>
+                    <label for="value_max">최고값</label>
+                    <input type="number" class="form-control" min="0" max="16000" name="value_max" id="value_max" value={{ value_max }}>
+                    <label for="value_min">최저값</label>
+                    <input type="number" class="form-control" min="0" max="16000" name="value_min" id="value_min" value={{ value_min }}>
+                    <input type="hidden" value="{{ subject }}" name="subject">
+                    <input type="hidden" value="{{ selected_name }}" name="selected_name">
+                    <input type="submit" value="검색">
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            <div class="side_list">
+                <p>아래에서 음식을 선택하세요.</p>
+                <ul>
+                    {% for food in foods %}
+                        {% if food['name'] == selected_name %}
+                        <li style="font-weight: bold">{{ food['name'] }}</li>
+                        {% else %}
+                        <li>
+                            <a href="{{ url_for('ir_search', key_and=key_and, key_exactly=key_exactly, key_or=key_or, key_except=key_except, category=category, selected_name=food['name'], selected_id=food['id'], selected_category=food['category'], range_max=range_max, range_min=range_min, value_max=value_max, value_min=value_min) }}">
+                                {{ food['name'] }}
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

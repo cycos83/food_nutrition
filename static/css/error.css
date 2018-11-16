@@ -1,0 +1,5 @@
+body div{
+    display: inline-block;
+    padding: 20px;
+    border: black 1px solid;
+}

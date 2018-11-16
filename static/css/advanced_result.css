@@ -1,0 +1,25 @@
+.detailed_nutrition{
+    margin-left: 50px;
+}
+
+.vitamin_list{
+    column-count: 2;
+}
+
+#nutrition_grade{
+    text-align: center;
+}
+
+#nutrition_grade p{
+    font-size: 64px;
+}
+
+#nutrition_grade .card-body{
+    padding: 0;
+}
+
+#nutrition_detail dt{
+    background-color: lightgray;
+    padding: 5px;
+    margin-bottom: 10px;
+}

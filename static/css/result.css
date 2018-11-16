@@ -1,0 +1,86 @@
+
+
+#searched_foods{
+    margin: 10px 0 10px 0;
+}
+
+.search_filter_bar p, .search_filter_bar .dropdown{
+    display: inline-block;
+}
+
+.search_filter_bar .search_option{
+    display: inline-block;
+}
+
+.food_badge{
+    display: inline-block;
+    background-color: #9fcdff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: .25em;
+    height: 45px;
+    overflow: hidden;
+}
+
+.dropdown .btn{
+    color: black;
+    background-color: inherit;
+    border: none;
+}
+
+.show > .btn-secondary.dropdown-toggle:focus{
+    color: black;
+    background-color: inherit;
+    border: none;
+}
+
+.show > .btn-secondary.dropdown-toggle{
+    color: black;
+    background-color: inherit;
+    border: none;
+}
+
+.card-title{
+    margin: 10px 0 20px 0;
+}
+
+.food_card{
+    overflow: hidden;
+}
+
+#searched_foods img{
+    width: 100%;
+}
+
+#subject h2{
+    display: inline-block;
+    margin: 0;
+}
+
+.search_change_button{
+    background-color: #263238;
+    font-size: 36px;
+    text-align: center;
+}
+
+.search_change_button a p{
+    color: white;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.result_side{
+    padding: 30px;
+}
+
+.result_side img{
+    width: 100%;
+}
+
+#page_nav{
+    display: inline-block;
+}
+
+#page_num{
+    text-align: center;
+}

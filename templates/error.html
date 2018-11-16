@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>에러!</title>
+    <link rel="stylesheet" href="../static/css/error.css">
+</head>
+<body>
+    <div>
+        <h1>에러가 있습니다.</h1>
+        {% if error == 'not valid' %}
+            <p>입력 값 또는 서버에 문제가 있습니다.</p>
+        {% else %}
+            <p>무언가 문제가 있습니다. 관리자에게 문의하세요.</p>
+        {% endif %}
+    </div>
+<body>
+</html>
