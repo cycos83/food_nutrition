@@ -13,7 +13,7 @@ for category in categorys:
 	try:
 		# 규칙에 맞춰 정리한 food_list 엑셀을 읽어서 값들을 입력한다.
 		# 2018년과 비교해 전부 신규 카테고리이기 때문에 id 신경쓰지 않고 그냥 입력
-		excel_data = pd.read_excel("food_list.xlsx", sheet_name=category)
+		excel_data = pd.read_excel("201907_food_list_v2.xlsx", sheet_name=category)
 		excel_data2 = excel_data.where((pd.notnull(excel_data)), None)
 
 		for index, row in excel_data2.iterrows():
